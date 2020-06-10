@@ -16,10 +16,8 @@ public class basic01Server {
                 System.out.println("サーバーは稼働しています。");  
                 Socket socket = server.accept();
                 PrintWriter output = new PrintWriter(socket.getOutputStream());
-                //BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream(), "UTF-8"));
                 output.println("Hello: BasicHTTP!");
                 output.println("IP Address : " + addr.getHostAddress());
-                //in.lines().forEach(System.out::println);
                 output.close();     // PrintWriterはclose()で閉じるのが基本
                 socket.close();     // Socketはclose()で閉じるのが基本
                 
